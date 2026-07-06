@@ -1,0 +1,23 @@
+artifact_path: /Users/sumit/Documents/mlops-churn-project/notebooks/mlruns/1/models/m-ffce263fa12f4c60935d4de2f3510e97/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.10.18
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.7.2
+    skops_trusted_types: null
+mlflow_version: 3.14.0
+model_id: m-ffce263fa12f4c60935d4de2f3510e97
+model_size_bytes: 19241905
+model_uuid: m-ffce263fa12f4c60935d4de2f3510e97
+prompts: null
+run_id: 82a65b1b40944f5e965503e8d59255fe
+utc_time_created: '2026-07-06 01:59:05.397796'
