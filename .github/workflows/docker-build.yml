@@ -1,0 +1,25 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t churn-prediction-api .
+
+      - name: Run container briefly to verify it starts
+        run: |
+          docker run -d -p 8000:8000 --name test-container churn-prediction-api
+          sleep 5
+          curl --fail http://localhost:8000/ || (docker logs test-container && exit 1)
+          docker stop test-container
